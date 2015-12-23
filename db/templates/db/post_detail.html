@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+{% load markdown_deux_tags %}
+
+
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+<div dir='auto'>
+{% if post %}
+  <div class='container'>
+    <div class="row">
+      <div class='col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1'>
+        <h2><a href="{% url 'post' pk=post.pk %}"> {{ post.title }}</a></h2>
+        <h4>Posted by: {{ post.author.first_name }}</h4>
+        <h5>
+          On: {{post.create_at|date:"Y-m-d H:i"}} &nbsp;
+          {% if post.is_updated %}
+            Updated at: {{post.update_at|date:'Y-m-d H:i'}}
+          {% endif %}
+        </h5>
+        <div class='full-post-body'>&nbsp; &nbsp; {{ post.get_excerpt_full|markdown }} </div>
+
+        <p class='fb-comments-padding'> Leave your comments here: </p>
+        <div class="fb-comments fb-comments-background" data-href="http://www.tech-wd.com/wd/2015/12/09/ipad-pro-review/" data-numposts="5"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=YOURAPPID";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+{%else%}
+  <div class='center'>
+    <h4 class='font-white font-hight'>Sorry, No post available</h4>
+  </div>
+{% endif %}
+</div> <!-- end of dir div -->
+{% endblock %}

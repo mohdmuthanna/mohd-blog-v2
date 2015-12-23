@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+{% load markdown_deux_tags %}
+
+
+{% block title %} {{page_title}} | Mohd Muthanna {% endblock %}
+
+{% block content %}
+
+
+{% if posts %}
+<div class='container'>
+  <div class="row">
+
+      <!-- print posts -->
+      {% for post in posts %}
+        <div dir="auto" class='col-xs-10 col-xs-offset-1 shine-div'>
+
+          <h2><a href="{% url 'post' pk=post.pk %}"> {{ post.title }}</a></h2>
+
+          <h4>Posted by: {{ post.author.first_name }} &nbsp; &nbsp; On: {{post.create_at|date:"d/m/Y"}}</h4>
+          <a class='remove-decoration' href="{% url 'post' pk=post.pk %}">
+            <h4 class='font-white font-justify font-hight'>
+              {{ post.get_excerpt|markdown }}
+            </h4>
+          </a>
+        </div>
+      {% endfor %}
+  </div>
+</div>
+      <!-- paging section work if num of pages morethan 1-->
+      {% if no_of_pages|length != 1 %}
+        <div class='pagination-padding'></div>
+        <div class='center'>
+          <span>Page</span>
+          <!-- bad way -->
+          {% for page in no_of_pages %}
+            <span>
+              <a class='btn btn-default {% if page_no == page %} active {%endif%}'
+                 href="{% url category page_no=page  %}"> {{page}} </a>
+            </span>
+          {% endfor %}
+
+        </div>
+      {% endif %} <!-- end of pagination if -->
+{% else %} <!-- if no posts -->
+        <div class='center'>
+          <h4 class='font-white font-hight'>Sorry, No post available</h4>
+        </div>
+{% endif %}
+
+
+<!-- befor end block-->
+{% endblock %}
+<!-- after end block -->
+
+
+
+<!--
+not secure way
+<script>
+    var p = "{{ post.text | escapejs }}";
+    var n = p.indexOf("---");
+    var trimedText = p.substring(0, n);
+
+    //alert(1);
+    document.write(trimedText);
+</script>
+-->

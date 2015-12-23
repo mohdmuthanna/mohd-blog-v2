@@ -1,0 +1,82 @@
+<!doctype html>
+{% load static from staticfiles %}
+
+<html>
+  <head>
+    <title> {% block title %} {% endblock%}</title>
+    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}">
+    <link rel='stylesheet' href="{% static 'css/mohd.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+
+    <meta charset="utf-8" />
+    <meta property="fb:admins" content="{1072515718}"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#burger_toggle" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'views.home' %}">Home</a>
+        </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="burger_toggle">
+        <ul class="nav navbar-nav">
+          <li><a href="/b/projects">Projects</a></li>
+          <li><a href="/b/en">Blog</a></li>
+          <li><a href="/b/ar">تدوينات</a></li>
+          <li><a href="/cv">CV</a></li>
+          <li><a href="/smedia">Social Media</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/contact">ContactMe</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav> <!-- nav end -->
+  <div class="nav-pading">  </div>
+
+
+    {% block content %}{% endblock %}
+
+    <!-- ------------ Footer ------------- -->
+
+
+    <footer class="my-footer">
+      <div class="container">
+        <div class='center'>
+          <a class ='my-padding-right' href="{% url 'views.home' %}">Home</a>
+          <a class ='my-padding-right' href="/b/projects">Projects</a>
+          <a class ='my-padding-right' href="/b/en">Blog</a>
+          <a class ='my-padding-right' href="/b/ar">تدوينات</a>
+          <a class ='my-padding-right' href="/cv">CV</a>
+          <a class ='my-padding-right' href="/smedia">Social Media</a>
+          <a class ='my-padding-right' href="/contact">ContactMe</a>
+        </div>
+      </div>
+      <br/>
+      <p class='center'>This site is designed and implemented by
+         <a href="/contact">Mohd</a> using
+         <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and
+         <a href="https://www.djangoproject.com/" target="_blank">Django</a>.
+      </p>
+      <p class='center'>All Rights Reserved by <a href="{% url 'views.home' %}">Mohd</a></p>
+    </footer>
+
+
+
+
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+
+</html>

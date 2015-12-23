@@ -1,0 +1,204 @@
+
+
+body, h1, h2, h3, h4, h5, h6, p{
+  font-family: 'Play', sans-serif;
+}
+
+.about-me-section-padding{
+  padding-bottom: 40px;
+}
+.nav-pading{
+  padding-bottom: 80px;
+}
+.about-me-box{
+  border-radius: 18px 18px 18px 18px;
+  -moz-border-radius: 18px 18px 18px 18px;
+  -webkit-border-radius: 18px 18px 18px 18px;
+  border: 0px solid #000000;
+
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+
+}
+
+.latest-body{
+  font-size: 16px;
+  color: #c8c8c8;
+  /*text-align: justify;*/
+
+}
+
+/*.latest-body p {
+  display: inline;
+}*/
+
+.head{
+  font-weight: 600;
+}
+
+.about-me-body{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: justify;
+}
+
+
+.contact{
+  font-size: 20px;
+  line-height: 30px;
+/*
+  list-style-type: none;
+  */
+}
+
+
+.font-green{
+  color: #14CC82;
+}
+
+
+
+.font-justify{
+  text-align: justify;
+}
+.font-b-blue{
+  color: #AAA6CE;
+}
+
+.font-white{
+  color: white;
+}
+.font-hight{
+  line-height: 25px;
+}
+
+.full-post-body{
+  color: white;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+
+
+.my-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color:rgb(28, 28, 29);
+    padding-top: 20px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* padding-right for fotter links */
+.my-padding-right {
+    padding-right: 15px;
+}
+
+.center {
+     text-align: center;
+}
+
+body {
+    margin-bottom: 300px; /* bottom = footer height */
+}
+
+.fb-comments-padding{
+  padding-top: 100px;
+}
+
+.fb-comments-background{
+    background-color: #EFEFEF
+}
+
+.page-no-not-used{
+  border-radius: 0px 0px 0px 0px;
+-moz-border-radius: 0px 0px 0px 0px;
+-webkit-border-radius: 0px 0px 0px 0px;
+border: 0px solid #000000;
+
+
+}
+
+/* font aosom site */
+.sm-fa {
+  font-size: 20px;
+  line-height: 20px;
+
+}
+.fa:hover {
+    color: #339CC3;
+    font-size: 110%;
+}
+
+.read-more{
+  margin-top: -15px;
+  margin-bottom: 150px;
+
+
+}
+.remove-decoration:hover{
+  text-decoration: none;
+}
+
+.shine-div:hover{
+  background-color: #43464A;
+}
+
+.hover-underline:hover{
+  text-decoration: underline;
+}
+
+/* Not used */
+
+.last-post-box-head{
+  font-size: 17px;
+  font-weight: 300;
+
+
+}
+/* to make imiges in full post view responsiv */
+.full-post-body img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+p.last-post-box-body{
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.page-no{
+
+  padding: 2px 6px 2px 6px;
+  margin: 2px;
+  text-decoration: none;
+  color: #FFF;
+  border: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 0px;
+}
+
+.pagination-padding{
+  padding-bottom: 60px;
+}
+
+a.ex2:hover, a.ex2:active{}
+a.page-hover:hover a.page-hover:active{
+	color:green;
+  background-color: white;
+  text-decoration: none;
+}
