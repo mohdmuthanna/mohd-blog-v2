@@ -1,4 +1,9 @@
 
+@media (min-width: 0px) and (max-width: 500px) {
+  body, p, div {font-size: 0.99em;}
+  h1, h2, h3, h4, h5, h6 {font-size: 1.9999em;}
+
+}
 
 body, h1, h2, h3, h4, h5, h6, p{
   font-family: 'Play', sans-serif;
@@ -24,7 +29,7 @@ body, h1, h2, h3, h4, h5, h6, p{
 }
 
 .latest-body{
-  font-size: 16px;
+  font-size: 1.1em;
   color: #c8c8c8;
   /*text-align: justify;*/
 
@@ -35,14 +40,13 @@ body, h1, h2, h3, h4, h5, h6, p{
 }*/
 
 .head{
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .about-me-body{
-  font-size: 17px;
+  font-size: 1.3em;
   font-weight: 300;
   line-height: 25px;
-  text-align: justify;
 }
 
 
@@ -156,14 +160,6 @@ border: 0px solid #000000;
   text-decoration: underline;
 }
 
-/* Not used */
-
-.last-post-box-head{
-  font-size: 17px;
-  font-weight: 300;
-
-
-}
 /* to make imiges in full post view responsiv */
 .full-post-body img{
   display: block;
@@ -172,6 +168,18 @@ border: 0px solid #000000;
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
+
+
+/* Not used */
+
+.last-post-box-head{
+  font-size: 17px;
+  font-weight: 300;
+
+
+}
+
 
 p.last-post-box-body{
   font-size: 15px;
