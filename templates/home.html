@@ -18,7 +18,7 @@
 
     <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-0">
       <div class=about-me-box>
-        <h2 class='head'> Mohammed Muthanna </h2>
+        <h2> Mohammed Muthanna </h2>
         <p class='about-me-body'>
           Welcome, I'm a Web Developer. I am living in Amman. I help you to have
           your own website.
@@ -43,13 +43,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 col-md-offset-0">
-      <h1 class='head'>View My Last Posts in:</h1>
+      <h2 class='head'>View My Last Posts in:</h2>
     </div>
   </div>
   <div class="row">
       <!-- Projects block -->
     <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
-      <h2><a href="/b/projects">Projects</a></h2>
+      <h3><a href="/b/projects">Projects</a></h3>
       {% if latest_project %}
       <div class='shine-div'>
           <a class='remove-decoration' href="{% url 'post' pk=latest_project.pk %}">
@@ -60,12 +60,12 @@
           </a>
       </div>
       {% else %}
-        <h4>Sorry, No post available</h4>
+        <p>Sorry, No post available</p>
       {% endif %}
     </div>
       <!-- Blog block -->
       <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
-          <h2><a href="/b/en">Blog</a></h2>
+          <h3><a href="/b/en">Blog</a></h3>
           {% if latest_blog %}
             <div class='shine-div'>
               <a class='remove-decoration' href="{% url 'post' pk=latest_blog.pk %}">
@@ -76,13 +76,13 @@
               </a>
             </div>
           {% else %}
-            <h4>Sorry, No post available</h4>
+            <p>Sorry, No post available</p>
           {% endif %}
       </div>
 
       <!-- Arabic block -->
       <div dir="auto" class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
-        <h2><a href="/b/ar">بالعربي</a></h2>
+        <h3><a href="/b/ar">بالعربي</a></h3>
         {% if latest_arabic %}
           <div class='shine-div'>
             <a class='remove-decoration' href="{% url 'post' pk=latest_arabic.pk %}">
