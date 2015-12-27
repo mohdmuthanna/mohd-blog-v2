@@ -13,13 +13,13 @@
     <div class="row">
       <div class='col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1'>
         <h2><a href="{% url 'post' pk=post.pk %}"> {{ post.title }}</a></h2>
-        <h4>Posted by: {{ post.author.first_name }}</h4>
-        <h5>
+        <p>Posted by: {{ post.author.first_name }}</p>
+        <p>
           On: {{post.create_at|date:"Y-m-d H:i"}} &nbsp;
           {% if post.is_updated %}
             Updated at: {{post.update_at|date:'Y-m-d H:i'}}
           {% endif %}
-        </h5>
+        </p>
         <div class='full-post-body'>&nbsp; &nbsp; {{ post.get_excerpt_full|markdown }} </div>
 
         <p class='fb-comments-padding'> Leave your comments here: </p>
@@ -38,7 +38,7 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 {%else%}
   <div class='center'>
-    <h4 class='font-white font-hight'>Sorry, No post available</h4>
+    <h4>Sorry, No post available</h4>
   </div>
 {% endif %}
 </div> <!-- end of dir div -->

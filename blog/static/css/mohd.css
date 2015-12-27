@@ -5,6 +5,7 @@
 
 }
 
+
 body, h1, h2, h3, h4, h5, h6, p{
   font-family: 'Play', sans-serif;
 }
@@ -50,13 +51,7 @@ body, h1, h2, h3, h4, h5, h6, p{
 }
 
 
-.contact{
-  font-size: 20px;
-  line-height: 30px;
-/*
-  list-style-type: none;
-  */
-}
+
 
 
 .font-green{
@@ -72,17 +67,19 @@ body, h1, h2, h3, h4, h5, h6, p{
   color: #AAA6CE;
 }
 
-.font-white{
-  color: white;
-}
-.font-hight{
+
+.posts-list-summary p{
   line-height: 25px;
+  font-size: 1.2em;
+  color: white;
+
+
 }
 
 .full-post-body{
   color: white;
   line-height: 30px;
-  font-size: 20px;
+  font-size: 1.4em;
 }
 
 
@@ -102,8 +99,8 @@ html {
 }
 
 /* padding-right for fotter links */
-.my-padding-right {
-    padding-right: 15px;
+.footer-links {
+    padding-right: 12px;
 }
 
 .center {
@@ -133,13 +130,13 @@ border: 0px solid #000000;
 
 /* font aosom site */
 .sm-fa {
-  font-size: 20px;
+  font-size: 1.2em;
   line-height: 20px;
 
 }
 .fa:hover {
     color: #339CC3;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 .read-more{
@@ -174,7 +171,7 @@ border: 0px solid #000000;
 /* Not used */
 
 .last-post-box-head{
-  font-size: 17px;
+  font-size: 1.2em;
   font-weight: 300;
 
 
@@ -182,7 +179,7 @@ border: 0px solid #000000;
 
 
 p.last-post-box-body{
-  font-size: 15px;
+  font-size: 1.1em;
   font-weight: 200;
   line-height: 25px;
   text-align: justify;
@@ -209,4 +206,12 @@ a.page-hover:hover a.page-hover:active{
 	color:green;
   background-color: white;
   text-decoration: none;
+}
+
+.contact{
+  font-size: 20px;
+  line-height: 30px;
+/*
+  list-style-type: none;
+  */
 }

@@ -18,12 +18,13 @@
 
           <h2><a href="{% url 'post' pk=post.pk %}"> {{ post.title }}</a></h2>
 
-          <h4>Posted by: {{ post.author.first_name }} &nbsp; &nbsp; On: {{post.create_at|date:"d/m/Y"}}</h4>
+          <p>Posted by: {{ post.author.first_name }} &nbsp; &nbsp; On: {{post.create_at|date:"d/m/Y"}}</p>
           <a class='remove-decoration' href="{% url 'post' pk=post.pk %}">
-            <h4 class='font-white font-justify font-hight'>
+            <div class='posts-list-summary'>
               {{ post.get_excerpt|markdown }}
-            </h4>
+            </div>
           </a>
+          <br><br>
         </div>
       {% endfor %}
   </div>
@@ -45,7 +46,7 @@
       {% endif %} <!-- end of pagination if -->
 {% else %} <!-- if no posts -->
         <div class='center'>
-          <h4 class='font-white font-hight'>Sorry, No post available</h4>
+          <h4>Sorry, No post available</h4>
         </div>
 {% endif %}
 
