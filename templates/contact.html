@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% load static from staticfiles %}
 
-
 {% block title %} Contact Me | Mohd Muthanna {% endblock %}
 
 {% block content %}
@@ -23,7 +22,77 @@
         <a href="/smedia">Social Media</a>
       </p>
     </div>
-  </div><!--  -->
-</div> <!-- --> <!-- end of container -->
+    <br> <br>
+  </div> <!-- end of row -->
+</div><!-- end of 1st container -->
+<div class="container contact-form-container">
+  <form class='form-horizontal' role="form" action="" method="post">
+    {% csrf_token %}
+    <br> <br>
+    {{ form.non_field_errors }}
+    <!-- subject row -->
+    <div class='row'>
+      <div class='form-group'>
+        <div class="fieldWrapper">
+          {{ form.subject.errors }}
+          <label for="subject" class='control-label col-sm-2 col-xs-8'>Subject</label>
+          <div class='col-sm-8 col-xs-12'>
+            {{ form.subject }}
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of subject row -->
 
+    <!-- email row -->
+    <div class='row'>
+      <div class='form-group'>
+        <div class="fieldWrapper">
+          {{ form.contact_email.errors }}
+          <label for="contact_email" class='control-label col-sm-2 col-xs-8'>Email</label>
+          <div class='col-sm-8 col-xs-12'>
+            {{ form.contact_email }}
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of email row -->
+
+    <!-- message row -->
+    <div class='row'>
+      <div class='form-group'>
+        <div class="fieldWrapper">
+          {{ form.message.errors }}
+          <label for="message" class='control-label col-sm-2 col-xs-8'>Message</label>
+          <div class='col-sm-8 col-xs-12'>
+            {{ form.message }}
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of message row -->
+    <div class='form-group'>
+      <button id='submit' class='btn btn-primary btn-md col-sm-2 col-sm-offset-2'> Send! </button>
+    </div>
+  </form>
+</div> <!-- --> <!-- end of 2nd container -->
+
+{% endblock %}
+
+{% block script %}
+<script>
+  $(document).ready(function() {
+    var subject = $('#id_subject');
+    subject.addClass('form-control');
+    subject.attr('placeholder', 'Subject');
+    subject.attr('style', 'height:;');
+
+
+    var contact_email = $('#id_contact_email');
+    contact_email.addClass('form-control');
+    contact_email.attr('placeholder', 'Enter your email');
+
+    var message = $('#id_message');
+    message.addClass('form-control');
+    message.attr('placeholder', 'Write your message..');
+
+  });
+</script>
 {% endblock %}

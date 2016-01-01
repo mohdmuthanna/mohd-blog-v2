@@ -1,0 +1,17 @@
+Downloading/unpacking sendgrid
+  Downloading sendgrid-1.5.19.tar.gz
+  Running setup.py (path:/tmp/pip-build-sx8vwyrt/sendgrid/setup.py) egg_info for package sendgrid
+    
+    warning: no previously-included files matching '*' found under directory 'test'
+Downloading/unpacking smtpapi==0.2.0 (from sendgrid)
+  Downloading smtpapi-0.2.0.tar.gz
+  Running setup.py (path:/tmp/pip-build-sx8vwyrt/smtpapi/setup.py) egg_info for package smtpapi
+    
+Installing collected packages: sendgrid, smtpapi
+  Running setup.py install for sendgrid
+    
+    warning: no previously-included files matching '*' found under directory 'test'
+  Running setup.py install for smtpapi
+    
+Successfully installed sendgrid smtpapi
+Cleaning up...
