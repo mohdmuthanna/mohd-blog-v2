@@ -64,6 +64,9 @@ body, h1, h2, h3, h4, h5, h6, p{
 .font-b-blue{
   color: #AAA6CE;
 }
+.alert .close{
+  color: white;
+}
 
 
 .posts-list-summary p{
@@ -216,4 +219,14 @@ a.page-hover:hover a.page-hover:active{
 .contact-form-container{
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.alert-contact {
+  background-color: #000000;
+  border-color: #271616;
+  color: #FFFFFF;
+}
+
+.contact-form-error-pading{
+    padding-left: 30px;
 }

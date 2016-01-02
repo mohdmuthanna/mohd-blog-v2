@@ -15,39 +15,46 @@
           Mobile: +962-785447921
         </li>
         <li class='contact'>
-          Email: mohd.muthanna@gmail.com
+          Email: m@mohd.im
         </li>
       </ul>
       <p> Also You can found me on
         <a href="/smedia">Social Media</a>
+        or you can use this form to send me a message.
       </p>
     </div>
-    <br> <br>
   </div> <!-- end of row -->
 </div><!-- end of 1st container -->
+
+
+
 <div class="container contact-form-container">
-  <form class='form-horizontal' role="form" action="" method="post">
-    {% csrf_token %}
-    <br> <br>
-    {{ form.non_field_errors }}
-    <!-- subject row -->
+  <!-- form input alert -->
+  {% if errors %}
     <div class='row'>
-      <div class='form-group'>
-        <div class="fieldWrapper">
-          {{ form.subject.errors }}
-          <label for="subject" class='control-label col-sm-2 col-xs-8'>Subject</label>
-          <div class='col-sm-8 col-xs-12'>
-            {{ form.subject }}
+      <div class='col-sm-2 col-xs-8'></div>
+      <div class='col-sm-8 col-xs-12'>
+        <div class="alert alert-contact alert-dismissable">
+          <button type="button" class="close font-white" data-dismiss="alert" aria-hidden="true">x</button>
+          <h4>Sorry, Something has gone wrong.</h4>
+          <div class='contact-form-error-pading'>
+            {% for error in errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
           </div>
         </div>
       </div>
-    </div> <!-- end of subject row -->
+    </div>
+  {% endif %}
 
+
+  <form class='form-horizontal' role="form" action="" method="post">
+    {% csrf_token %}
+    <br> <br>
     <!-- email row -->
     <div class='row'>
       <div class='form-group'>
         <div class="fieldWrapper">
-          {{ form.contact_email.errors }}
           <label for="contact_email" class='control-label col-sm-2 col-xs-8'>Email</label>
           <div class='col-sm-8 col-xs-12'>
             {{ form.contact_email }}
@@ -56,11 +63,22 @@
       </div>
     </div> <!-- end of email row -->
 
+    <!-- subject row -->
+    <div class='row'>
+      <div class='form-group'>
+        <div class="fieldWrapper">
+          <label for="subject" class='control-label col-sm-2 col-xs-8'>Subject</label>
+          <div class='col-sm-8 col-xs-12'>
+            {{ form.subject }}
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of subject row -->
+
     <!-- message row -->
     <div class='row'>
       <div class='form-group'>
         <div class="fieldWrapper">
-          {{ form.message.errors }}
           <label for="message" class='control-label col-sm-2 col-xs-8'>Message</label>
           <div class='col-sm-8 col-xs-12'>
             {{ form.message }}
@@ -82,16 +100,18 @@
     var subject = $('#id_subject');
     subject.addClass('form-control');
     subject.attr('placeholder', 'Subject');
-    subject.attr('style', 'height:;');
+    subject.attr('value', '{{subject_val}}');
 
 
     var contact_email = $('#id_contact_email');
     contact_email.addClass('form-control');
     contact_email.attr('placeholder', 'Enter your email');
+    contact_email.attr('value', '{{contact_email_val}}');
 
     var message = $('#id_message');
     message.addClass('form-control');
     message.attr('placeholder', 'Write your message..');
+    message.val('{{message_val|escapejs}}');
 
   });
 </script>
