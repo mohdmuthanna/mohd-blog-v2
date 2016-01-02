@@ -1,6 +1,5 @@
 venv
 *.pyc
-staticfiles
 __pycache__
 /.env
 /notes.txt
