@@ -6,4 +6,5 @@ psycopg2==2.6
 SQLAlchemy==1.0.4
 whitenoise==2.0.2
 django-markdown-deux==1.0.5
+snowpenguin.django.recaptcha2
 # django-contactme  # TODO: Activate it
