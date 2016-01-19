@@ -80,7 +80,7 @@ body, h1, h2, h3, h4, h5, h6, p{
 .full-post-body{
   color: white;
   line-height: 30px;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 
@@ -89,9 +89,9 @@ body, h1, h2, h3, h4, h5, h6, p{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 150px;
+    /*height: 150px;*/
     background-color:rgb(28, 28, 29);
-    padding-top: 20px;
+    padding-top: 22px;
 }
 
 html {
@@ -102,6 +102,8 @@ html {
 /* padding-right for fotter links */
 .footer-links {
     padding-right: 12px;
+    font-size: 15px;
+    line-height: 30px;
 }
 
 .center {
@@ -229,4 +231,20 @@ a.page-hover:hover a.page-hover:active{
 
 .contact-form-error-pading{
     padding-left: 30px;
+}
+.contact-form-alert-padding{
+  padding-top: 20px;
+}
+.alert-star{
+  color: #F9863F;
+}
+
+.errorlist {
+  color: #F9863F;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+ .smedia-p{
+  font-size: 16px;
 }

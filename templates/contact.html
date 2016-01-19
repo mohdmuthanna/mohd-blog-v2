@@ -27,38 +27,38 @@
 </div><!-- end of 1st container -->
 
 
-
 <div class="container contact-form-container">
-  <!-- form input alert -->
-  {% if errors %}
-    <div class='row'>
-      <div class='col-sm-2 col-xs-8'></div>
-      <div class='col-sm-8 col-xs-12'>
-        <div class="alert alert-contact alert-dismissable">
-          <button type="button" class="close font-white" data-dismiss="alert" aria-hidden="true">x</button>
-          <h4>Sorry, Something has gone wrong.</h4>
-          <div class='contact-form-error-pading'>
-            {% for error in errors %}
-            <p>{{ error }}</p>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
 
   <form class='form-horizontal' role="form" action="" method="post">
     {% csrf_token %}
+
     <br> <br>
     <!-- email row -->
     <div class='row'>
       <div class='form-group'>
         <div class="fieldWrapper">
-          <label for="contact_email" class='control-label col-sm-2 col-xs-8'>Email</label>
-          <div class='col-sm-8 col-xs-12'>
+          <div class='col-sm-10 col-sm-offset-2 contact-form-alert-padding'>
+            {{ form.contact_email.errors }}
+          </div>
+          <label for="contact_email" class='control-label col-sm-2 col-xs-12'>
+            Email
+            {% if form.contact_email.errors %}
+              <span class='alert-star'>&nbsp;*</span>
+            {%endif%}
+          </label>
+          <!--
+          <div class='col-xs-10 visible-xs'>
+            {{ form.contact_email.errors }}
+          </div>
+          -->
+          <div class='col-sm-7 col-xs-12'>
             {{ form.contact_email }}
           </div>
+          <!--
+          <div class='col-sm-3 hidden-xs'>
+            {{ form.contact_email.errors }}
+          </div>
+          -->
         </div>
       </div>
     </div> <!-- end of email row -->
@@ -67,8 +67,16 @@
     <div class='row'>
       <div class='form-group'>
         <div class="fieldWrapper">
-          <label for="subject" class='control-label col-sm-2 col-xs-8'>Subject</label>
-          <div class='col-sm-8 col-xs-12'>
+          <div class='col-sm-10 col-sm-offset-2 contact-form-alert-padding'>
+            {{ form.subject.errors }}
+          </div>
+          <label for="subject" class='control-label col-sm-2 col-xs-12'>
+            Subject
+            {% if form.subject.errors %}
+              <span class='alert-star'>&nbsp;*</span>
+            {%endif%}
+          </label>
+          <div class='col-sm-7 col-xs-12'>
             {{ form.subject }}
           </div>
         </div>
@@ -79,40 +87,64 @@
     <div class='row'>
       <div class='form-group'>
         <div class="fieldWrapper">
-          <label for="message" class='control-label col-sm-2 col-xs-8'>Message</label>
-          <div class='col-sm-8 col-xs-12'>
+          <div class='col-sm-10 col-sm-offset-2 contact-form-alert-padding'>
+            {{ form.message.errors }}
+          </div>
+          <label for="message" class='control-label col-sm-2 col-xs-12'>
+            Message
+            {% if form.message.errors %}
+              <span class='alert-star'>&nbsp;*</span>
+            {%endif%}
+          </label>
+          <div class='col-sm-7 col-xs-12'>
             {{ form.message }}
           </div>
         </div>
       </div>
     </div> <!-- end of message row -->
-    <div class='form-group'>
-      <button id='submit' class='btn btn-primary btn-md col-sm-2 col-sm-offset-2'> Send! </button>
-    </div>
+
+    <div class='row'>  <!-- recaptcha row -->
+      <div class='form-group'>
+        <div class='col-sm-10 col-sm-offset-2 contact-form-alert-padding'>
+          {{ form.captcha.errors }}
+        </div>
+        <div class="col-sm-2 col-sm-offset-2">
+          {{ form.captcha }}
+        </div>
+      </div>
+    </div> <!-- end of recaptcha row -->
+
+    <div class='row'> <!-- submit row -->
+      <div class='formmmmm-group'>
+        <button id='submit' class='btn btn-primary btn-md col-sm-2 col-sm-offset-2'> Send! </button>
+      </div>
+    </div> <!-- end of submit row -->
   </form>
+
 </div> <!-- --> <!-- end of 2nd container -->
 
 {% endblock %}
 
 {% block script %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-  $(document).ready(function() {
-    var subject = $('#id_subject');
-    subject.addClass('form-control');
-    subject.attr('placeholder', 'Subject');
-    subject.attr('value', '{{subject_val}}');
-
-
-    var contact_email = $('#id_contact_email');
-    contact_email.addClass('form-control');
-    contact_email.attr('placeholder', 'Enter your email');
-    contact_email.attr('value', '{{contact_email_val}}');
-
-    var message = $('#id_message');
-    message.addClass('form-control');
-    message.attr('placeholder', 'Write your message..');
-    message.val('{{message_val|escapejs}}');
-
-  });
+  // $(document).ready(function() {
+  //   var subject = $('#id_subject');
+  //   subject.addClass('form-control');
+  //   // subject.attr('placeholder', 'Subject');
+  //   // subject.attr('value', '{{subject_val}}');
+  //
+  //
+  //   var contact_email = $('#id_contact_email');
+  //   contact_email.addClass('form-control');
+  //   // contact_email.attr('placeholder', 'Enter your email');
+  //   // contact_email.attr('value', '{{contact_email_val}}');
+  //
+  //   var message = $('#id_message');
+  //   message.addClass('form-control');
+  //   // message.attr('placeholder', 'Write your message..');
+  //   // message.val('{{message_val|escapejs}}');
+  //
+  // });
 </script>
 {% endblock %}

@@ -27,6 +27,8 @@ DEBUG = bool(os.environ.get('DEBUG', False))
 
 TEMPLATE_DEBUG = False
 
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
 
 # Application definition
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'db',
     'markdown_deux',
+    'snowpenguin.django.recaptcha2',
     # 'django_contactme',
 )
 

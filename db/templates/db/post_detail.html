@@ -22,13 +22,16 @@
         </p>
         <div class='full-post-body'>&nbsp; &nbsp; {{ post.get_excerpt_full|markdown }} </div>
 
+        <!--
         <p class='fb-comments-padding'> Leave your comments here: </p>
         <div class="fb-comments fb-comments-background" data-href="http://www.tech-wd.com/wd/2015/12/09/ipad-pro-review/" data-numposts="5"></div>
+        -->
       </div>
     </div>
   </div>
 
   <div id="fb-root"></div>
+  <!--
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -36,6 +39,7 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=YOURAPPID";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+  -->
 {%else%}
   <div class='center'>
     <h4>Sorry, No post available</h4>

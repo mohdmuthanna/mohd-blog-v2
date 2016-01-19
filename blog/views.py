@@ -1,10 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from db.models import Post, Category
-
+from db.models import Category, Post
 from .forms import ContactForm
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect
-from django.core.validators import validate_email
 
 # from django.http import HttpResponse
 # from django.template.loader import get_template
@@ -38,35 +35,13 @@ def smedia(request):
     return render(request, 'smedia.html',)
 
 def contact(request):
-    form_class = ContactForm
-    errors = []
-    subject_val = ''
-    message_val = ''
-    contact_email_val = ''
-
     # new logic!
     if request.method == 'POST':
-        form = form_class(data=request.POST)
-
-        contact_email_val = request.POST.get('contact_email')
-        try:
-            validate_email(contact_email_val)
-        except:
-            errors.append('Enter a valid e-mail address.')
-
-        subject_val = request.POST.get('subject', '')
-        if not subject_val:
-            errors.append('Enter a subject.')
-
-        message_val = request.POST.get('message', '')
-        if not message_val:
-            errors.append('Enter a message.')
-
-
+        form = ContactForm(data=request.POST)
         if form.is_valid():
-            contact_email = request.POST.get('contact_email', '')
-            subject = request.POST.get('subject', '')
-            message = request.POST.get('message', '')
+            contact_email = form.cleaned_data.get('contact_email')
+            subject = form.cleaned_data.get('subject')
+            message = form.cleaned_data.get('message')
 
             send_mail(
                 subject,
@@ -75,8 +50,11 @@ def contact(request):
                 ['m@mohd.im'],
                 fail_silently=False,
             )
+
             message = thanks_message + message
+
             subject = "RE:" + subject
+
             send_mail(
                 subject,
                 message,
@@ -85,14 +63,15 @@ def contact(request):
                 fail_silently=False,
             )
             return render(request, 'thanks-email.html',)
-            # return HttpResponseRedirect('thanks-email.html')
+    else:
+        form = ContactForm()
 
     return render(request, 'contact.html', {
-        'form': form_class,
-        'errors': errors,
-        'subject_val': subject_val,
-        'contact_email_val': contact_email_val,
-        'message_val': message_val,
+        'form': form,
+        # 'errors': errors,
+        # 'subject_val': subject_val,
+        # 'contact_email_val': contact_email_val,
+        # 'message_val': message_val,
         })
 
 # def contact(request):
