@@ -15,9 +15,9 @@
         <h2><a href="{% url 'post' pk=post.pk %}"> {{ post.title }}</a></h2>
         <p>Posted by: {{ post.author.first_name }}</p>
         <p>
-          On: {{post.create_at|date:"Y-m-d H:i"}} &nbsp;
+          Puplished: {{post.create_at|date:"Y-m-d H:i"}} &nbsp;
           {% if post.is_updated %}
-            Updated at: {{post.update_at|date:'Y-m-d H:i'}}
+            Updated: {{post.update_at|date:'Y-m-d H:i'}}
           {% endif %}
         </p>
         <div class='full-post-body'>&nbsp; &nbsp; {{ post.get_excerpt_full|markdown }} </div>
