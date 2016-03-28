@@ -1,10 +1,11 @@
 #Mohammed's Blog
 
 ##Welcome
-Welcome to my first project, This project was written in Django, Recently I start learning Python & Django so I make this project to know and enhance my programming ability.
+Welcome to my first project, This project was written in Django, Recently I start learning Python & Django so I made this project to know and enhance my programming ability.
 
 ##Important Note
-The Project assume that you have ONLY THREE categories, (blog, arabic, project), So if any one want to use this project should take this property in his account and create this three categories.
+The Project assume that you have ONLY THREE categories of post (blog, arabic, project), So if any one want to use this project should take this property in his account and create this three categories.
+Use this string "---" (without qutes) to siplit post, Anything befor this string will appear in main page and the other part of post will appear only in full post page's
 
 ## Creator
 [Mohd Muthanna][1]
