@@ -68,11 +68,14 @@ def contact(request):
 
     return render(request, 'contact.html', {
         'form': form,
-        # 'errors': errors,
+        # 'errors': errors,contactcontact
         # 'subject_val': subject_val,
         # 'contact_email_val': contact_email_val,
         # 'message_val': message_val,
         })
+
+    def robots(request):
+        return render(request, 'robots.txt',)
 
 # def contact(request):
 #     form_class = ContactForm
